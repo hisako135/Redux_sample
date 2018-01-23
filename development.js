@@ -23,7 +23,7 @@ export default {
     },
 
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js','jsx']
     },
 
     plugins: [
@@ -31,5 +31,10 @@ export default {
             template: src + '/index.html',
             filename: 'index.html'
         })
-    ]
+    ],
+
+    devServer: {
+        contentBase: 'build',
+        port: 8081
+    }    
 }
