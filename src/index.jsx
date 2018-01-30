@@ -39,20 +39,24 @@ class StateComponent extends React.Component {
 
 
 class TextInputComponent extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         
         this.state =  {
             val: 'type anything!'
         };
     }
     
+    onChange(e) {
+        this.setState({val: e.target.value})
+    }
+
     render() {
         let {val} = this.state;
         
         return(
             <div>
-                <input type="text" value={val}/>
+                <input type="text" value={val} onChange={this.onChange.bind(this)}/>
                 <button type="buntton">Clear</button>
                 <hr/>
                 {val}
