@@ -1,5 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom'; // ブラウザ = DOMに表示
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import todoApp from './reducers';
+import App from './components/App';
 
 class HelloComponent extends React.Component {
     render () {
@@ -79,6 +83,15 @@ class AppComponent extends React.Component {
     }
 }
 
-const $app = document.getElementById('app');
+let store =  createStore(todoApp)
+const $app = document.getElementById('app')
 
-render(<AppComponent/>, $app)
+render(
+    <div>
+        <AppComponent/>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </div>, 
+    $app
+)
