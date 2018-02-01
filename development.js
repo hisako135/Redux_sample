@@ -5,7 +5,7 @@ const src  = path.resolve(__dirname, 'src')
 const dist = path.resolve(__dirname, 'dist')
 
 export default {
-    entry: src + '/index.jsx',
+    entry: src + '/index.js',
 
     output: {
         path: dist,
@@ -15,7 +15,7 @@ export default {
     module: {
         loaders: [
             {
-                test: /\.jsx$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             }
