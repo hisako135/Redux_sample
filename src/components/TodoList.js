@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Todos from './Todos'
+import Todo from './Todo'
 
-const TodoList = ({ todo, onTodoClick}) => (
+const TodoList = ({ todos, onTodoClick}) => (
     <ul>
         {todos.map(todo => (
-            <Todo key={todo.id}{...todo} oncClick={() => onTodoClick(todo.id)} />
+            <Todo key={todo.id}{...todo} onClick={() => onTodoClick(todo.id)} />
         ))} 
     </ul>
 )
 
-TodoList.prototype = {
+TodoList.propTypes = {
     todos: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,

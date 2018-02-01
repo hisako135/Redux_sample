@@ -6,6 +6,11 @@ import todoApp from './reducers';
 import App from './components/App';
 
 let store =  createStore(todoApp)
+
+store.subscribe(() => 
+    console.log(store.getState())
+)
+
 const $app = document.getElementById('app')
 
 render(
