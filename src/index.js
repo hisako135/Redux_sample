@@ -14,10 +14,8 @@ store.subscribe(() =>
 const $app = document.getElementById('app')
 
 render(
-    <div>
-        <Provider store={store}>
-            <App />
-        </Provider>
-    </div>, 
-    $app
+  <Provider store={store}>
+    <App />
+  </Provider>, 
+  $app
 )
